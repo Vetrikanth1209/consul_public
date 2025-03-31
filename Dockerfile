@@ -1,5 +1,8 @@
 FROM hashicorp/consul:latest
 
+# Create data directory
+RUN mkdir -p /consul/data && chmod -R 777 /consul/data
+
 # Copy custom config
 COPY config.json /consul/config/config.json
 
