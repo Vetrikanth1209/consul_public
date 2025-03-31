@@ -1,11 +1,10 @@
-# Use the official Consul image
 FROM hashicorp/consul:latest
 
-# Create the config directory inside the container
-RUN mkdir -p /consul/config
-
-# Copy the custom configuration file into the container
+# Copy custom config
 COPY config.json /consul/config/config.json
 
-# Start Consul with the provided configuration
+# Expose necessary ports
+EXPOSE 8500 8501
+
+# Start Consul with configuration
 CMD ["consul", "agent", "-config-dir=/consul/config"]

@@ -5,7 +5,6 @@
     "datacenter": "dc1",
     "ui": true,
     "log_level": "INFO",
-    "bootstrap_expect": 1,
     "ports": {
       "http": 8500,
       "https": 8501
