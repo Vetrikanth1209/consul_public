@@ -6,7 +6,6 @@
     "ui": true,
     "log_level": "INFO",
     "bootstrap_expect": 1,
-    "advertise_addr": "0.0.0.0",
     "data_dir": "/consul/data",
     "ports": {
       "http": 8500,
