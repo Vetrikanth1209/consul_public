@@ -1,13 +1,13 @@
 FROM hashicorp/consul:latest
 
-# Create data directory
-RUN mkdir -p /consul/data && chmod -R 777 /consul/data
+# Create necessary directories
+RUN mkdir -p /consul/config /consul/data
 
 # Copy custom config
 COPY config.json /consul/config/config.json
 
 # Expose necessary ports
-EXPOSE 8500 8501
+EXPOSE 8500 8501 8600/tcp 8600/udp
 
-# Start Consul with configuration
-CMD ["consul", "agent", "-config-dir=/consul/config"]
+# Start Consul with config
+CMD ["consul", "agent", "-server", "-bootstrap-expect=1", "-config-dir=/consul/config"]
