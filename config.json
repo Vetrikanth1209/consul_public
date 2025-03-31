@@ -1,0 +1,14 @@
+{
+    "server": true,
+    "bind_addr": "0.0.0.0",
+    "client_addr": "0.0.0.0",
+    "datacenter": "dc1",
+    "ui": true,
+    "log_level": "INFO",
+    "bootstrap_expect": 1,
+    "ports": {
+      "http": 8500,
+      "https": 8501
+    }
+  }
+  
